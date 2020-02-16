@@ -10,23 +10,7 @@ import static logic.Display.*;
 public class Structure {
     private Van van1;
     private Van van2;
-//    private static volatile Structure INSTANCE;
-//
-//    private Structure() {
-//    }
-//
-//    public static Structure getInstance() {
-//        Structure structure = INSTANCE;
-//        if (structure == null) {
-//            synchronized (Structure.class) {
-//                structure = INSTANCE;
-//                if (structure == null) {
-//                    structure = INSTANCE = new Structure();
-//                }
-//            }
-//        }
-//        return structure;
-//    }
+
 
     public static int height = 28;
     public static int width = 60;
@@ -85,10 +69,12 @@ public class Structure {
                 map[height - 1][i].setTypeSame(node);
                 continue;
             }
-            if (node.verify(NodeType.HOUSE_BLOCK, LocType.LEFT) && node.verify(NodeType.HOUSE_BLOCK, LocType.LEFT, LocType.LEFT)) {
+            if (node.verify(NodeType.HOUSE_BLOCK, LocType.LEFT) &&
+                    node.verify(NodeType.HOUSE_BLOCK, LocType.LEFT, LocType.LEFT)) {
                 continue;
             }
-            if (node.verify(NodeType.HOUSE_BLOCK, LocType.RIGHT) && node.verify(NodeType.HOUSE_BLOCK, LocType.RIGHT, LocType.RIGHT)) {
+            if (node.verify(NodeType.HOUSE_BLOCK, LocType.RIGHT) &&
+                    node.verify(NodeType.HOUSE_BLOCK, LocType.RIGHT, LocType.RIGHT)) {
                 continue;
             }
             node.setRandomAsHouseBlock();
@@ -102,10 +88,12 @@ public class Structure {
                 map[i][width - 1].setTypeSame(node);
                 continue;
             }
-            if (node.verify(NodeType.HOUSE_BLOCK, LocType.UP) && node.verify(NodeType.HOUSE_BLOCK, LocType.UP, LocType.UP)) {
+            if (node.verify(NodeType.HOUSE_BLOCK, LocType.UP) &&
+                    node.verify(NodeType.HOUSE_BLOCK, LocType.UP, LocType.UP)) {
                 continue;
             }
-            if (node.verify(NodeType.HOUSE_BLOCK, LocType.DOWN) && node.verify(NodeType.HOUSE_BLOCK, LocType.DOWN, LocType.DOWN)) {
+            if (node.verify(NodeType.HOUSE_BLOCK, LocType.DOWN) &&
+                    node.verify(NodeType.HOUSE_BLOCK, LocType.DOWN, LocType.DOWN)) {
                 continue;
             }
             node.setRandomAsHouseBlock();
@@ -114,7 +102,8 @@ public class Structure {
 
         for (int i = 1; i < width - 1; i++) { //set second line
             node = map[1][i];
-            if (!node.verify(NodeType.HOUSE_BLOCK, LocType.UP) || node.verify(NodeType.HOUSE_BLOCK, LocType.RIGHT, LocType.DOWN) ||
+            if (!node.verify(NodeType.HOUSE_BLOCK, LocType.UP) ||
+                    node.verify(NodeType.HOUSE_BLOCK, LocType.RIGHT, LocType.DOWN) ||
                     node.verify(NodeType.HOUSE_BLOCK, LocType.LEFT, LocType.DOWN)) {
                 continue;
             }
@@ -123,7 +112,8 @@ public class Structure {
 
         for (int i = 1; i < width - 1; i++) { //set before last line
             node = map[height - 2][i];
-            if (!node.verify(NodeType.HOUSE_BLOCK, LocType.DOWN) || node.verify(NodeType.HOUSE_BLOCK, LocType.RIGHT, LocType.UP) ||
+            if (!node.verify(NodeType.HOUSE_BLOCK, LocType.DOWN) ||
+                    node.verify(NodeType.HOUSE_BLOCK, LocType.RIGHT, LocType.UP) ||
                     node.verify(NodeType.HOUSE_BLOCK, LocType.LEFT, LocType.UP)) {
                 continue;
             }
@@ -294,6 +284,7 @@ public class Structure {
     }
 
     public Van getVan2() {
+
         return van2;
     }
 
@@ -302,7 +293,6 @@ public class Structure {
         int nodeJ = (j - baseX) / BLOCK;
         return  map[nodeI][nodeJ];
     }
-
 
     public enum   NodeType {
         HOUSE_BLOCK(1), HOUSE(2), PIPELINE_BLOCK(0), PIPELINE(5) ;

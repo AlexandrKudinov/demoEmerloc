@@ -12,24 +12,24 @@ private Structure structure;
     int i;
     int j;
 
-    int MAX_J = baseX + (Structure.width-1)* BLOCK;//-1
-    int MAX_I = baseY + (Structure.height-1) * BLOCK;//-1
+    int MAX_J = (Structure.width-1)* BLOCK;//-1   //+baseY
+    int MAX_I = (Structure.height-1) * BLOCK;//-1   //+baseX
 
     public Van(int i, int j) {
-        this.i = baseY + i * BLOCK;
-        this.j = baseX + j * BLOCK;
+        this.i =  i * BLOCK;//+baseY
+        this.j =  j * BLOCK;//+baseX
     }
 
     public boolean canMove(int i, int j) {
-        int nodeI = (i - baseY) / BLOCK;
-        int nodeJ = (j - baseX) / BLOCK;
+        int nodeI = (i) / BLOCK;
+        int nodeJ = (j) / BLOCK;
         Node node = structure.getMap()[nodeI][nodeJ];
         return !node.isHouse();
     }
 
     private boolean onAccident() {
-        int nodeI = (i - baseY) / BLOCK;
-        int nodeJ = (j - baseX) / BLOCK;
+        int nodeI = (i ) / BLOCK;
+        int nodeJ = (j ) / BLOCK;
         Node node = structure.getMap()[nodeI][nodeJ];
         return node.getPipe().isAccident();
     }
@@ -44,7 +44,7 @@ private Structure structure;
     }
 
     public void turnLeft() {
-        if (j == baseX) {
+        if (j == 0) {
             j = MAX_J;
             return;
         }
@@ -59,7 +59,7 @@ private Structure structure;
 
     public void turnRight() {
         if (j == MAX_J) {
-            j = baseX;
+            j = 0;
             return;
         }
         if (canMove(i + 1, j + BLOCK + 1) && canMove(i + BLOCK - 1, j + BLOCK + 1)) {
@@ -71,7 +71,7 @@ private Structure structure;
     }
 
     public void turnUp() {
-        if (i == baseY) {
+        if (i == 0) {
             i = MAX_I;
             return;
         }
@@ -85,7 +85,7 @@ private Structure structure;
 
     public void turnDown() {
         if (i == MAX_I) {
-            i = baseY;
+            i = 0;
             return;
         }
         if (canMove(i + BLOCK + 1, j + 1) && canMove(i + BLOCK + 1, j + BLOCK - 1)) {

@@ -1,8 +1,3 @@
-<%@ page import="logic.*" %>
-<%@ page import="websocket.GameServerEndPoint" %>
-<%@ page import="java.awt.*" %>
-<%@ page import="javax.websocket.Session" %>
-<%@ page import="websocket.GameSession" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -11,70 +6,129 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <script src="chat.js"></script>
+
 
     <script>
+        var van1 = new Image();
+        van1.src = 'Van1.png';
+        var van2 = new Image();
+        van2.src = 'Van2.png';
+
         var path = window.location.pathname;
         var webCtx = path.substring(0, path.indexOf('/', 1));
         var endPointURL = "ws://" + window.location.host + webCtx + "/game";
         var playerConnection = null;
 
-        function connect() {
+
+        function connect(event) {
             playerConnection = new WebSocket(endPointURL);
-            refresh();
+
             playerConnection.onmessage = function (event) {
-                var msg = event.data;
-                document.getElementById("contentfile").innerHTML = "      <b>"+event.data+"</b>";
-                refresh();
+                let data = JSON.parse(event.data);
+                var canvas = document.getElementById("field");
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = 'rgb(24, 24, 24)';
+                ctx.fillRect(0, 0, 1200, 600);
+
+                if (data == 1) {
+                    ctx.font = "bold 30px Calibri";
+                    ctx.fillStyle = 'rgb(0, 168, 243)';
+                    ctx.textAlign = "center";
+                    ctx.fillText("waiting for another player...", canvas.width/2-35, canvas.height/2);
+                    document.getElementById("button").innerHTML = "<p></p>";
+                    document.getElementById("field").innerHTML = ctx;
+
+                    return;
+                }
+
+                if (data == -1) {
+                    ctx.font = "bold 30px Calibri";
+                    ctx.fillStyle = 'rgb(0, 168, 243)';
+                    ctx.textAlign = "center";
+                    ctx.fillText("another player leaved game in fear, you win!", canvas.width/2-30, canvas.height/2);
+                    document.getElementById("field").innerHTML = ctx;
+                    return;
+                }
+
+                for (let i = 0; i < data.houses.length; i++) {
+                    let {coords, flag} = data.houses[i];
+                    drawHouse(coords, flag);
+                }
+                for (let i = 0; i < data.valves.length; i++) {
+                    let {coords, flag} = data.valves[i];
+                    drawValve(coords, flag);
+                }
+                for (let i = 0; i < data.dots.length; i++) {
+                    let {coords, flag} = data.dots[i];
+                    drawDot(coords, flag);
+                }
+                for (let i = 0; i < data.horizontalPlumbs.length; i++) {
+                    let {coords, flag} = data.horizontalPlumbs[i];
+                    drawHorizontalPlumb(coords, flag);
+                }
+                for (let i = 0; i < data.verticalPlumbs.length; i++) {
+                    let {coords, flag} = data.verticalPlumbs[i];
+                    drawVerticalPlumb(coords, flag);
+                }
+
+                ctx.drawImage(van1, data.playerOnePosition[0], data.playerOnePosition[1], 20, 20);
+                ctx.drawImage(van2, data.playerTwoPosition[0], data.playerTwoPosition[1], 20, 20);
+                document.getElementById("field").innerHTML += ctx;
             };
         }
 
+
         function disconnect() {
             playerConnection.close();
-             refresh();
+        }
+
+        function drawHorizontalPlumb(coords, flag) {
+            let color = flag === true ? 'rgb(0, 168, 243)' : 'rgb(0, 67, 114)';
+            var canvas = document.getElementById("field");
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = color;
+            ctx.fillRect(coords[0], coords[1], 12, 4);
+        }
+
+        function drawVerticalPlumb(coords, flag) {
+            let color = flag === true ? 'rgb(0, 168, 243)' : 'rgb(0, 67, 114)';
+            var canvas = document.getElementById("field");
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = color;
+            ctx.fillRect(coords[0], coords[1], 4, 12);
+        }
+
+        function drawHouse(coords, flag) {
+            let color = flag === true ? 'rgb(65, 65, 65)' : 'rgb(45, 45, 45)';
+            var canvas = document.getElementById("field");
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = color;
+            ctx.fillRect(coords[0], coords[1], 20, 20);
         }
 
 
-        function refresh() {
-            //  var myDate = new java.util.Date();
-            <%--<%--%>
-            <%--// if (GameServerEndPoint.getPlayersSessions().size()==1){--%>
-            <%--for(int i = 0;i<10;i++){%>--%>
-            <%--document.getElementById("contentfile").innerHTML += "      <b>myDate</b><br><hr><br>" + counter;--%>
-            <%--counter++;--%>
-            <%--<%}%>--%>
-
-
-            <%--<%for (int i = 0;i<100;i+=20){%>--%>
-            <%--document.getElementById("field").innerHTML +="<rect x=" + <%=i%> + " y=0 width=10 height=10 fill='rgb(65, 65, 65)' />";--%>
-            <%--<%}%>--%>
-
-
-            <%--<%--%>
-            <%--GameSession gameSession = GameServerEndPoint.getCurrentGameSession();--%>
-            <%--if (gameSession != null) {--%>
-            <%--WaterSupplyMap waterSupplyMap = gameSession.getWaterSupplyMap();--%>
-            <%--for (Pipeline pipeline : waterSupplyMap.getPipelines()) {--%>
-            <%--for (House house : pipeline.getHouses()) {--%>
-            <%--for (Node node : house.getHouseFragments()) {--%>
-            <%--int i = node.getI() * 20;--%>
-            <%--int j = node.getJ() * 20;%>--%>
-            <%--document.getElementById("field").innerHTML +="<rect x=" + <%=j%> + " y=" +  <%=i%> + " width=20 height=20 fill='rgb(65, 65, 65)' />";--%>
-            <%--<% }--%>
-            <%--}--%>
-            <%--}--%>
-            <%--}--%>
-            <%--%>--%>
-
-
+        function drawDot(coords, flag) {
+            let color = flag === true ? 'rgb(0, 168, 243)' : 'rgb(0, 67, 114)';
+            var canvas = document.getElementById("field");
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = color;
+            ctx.fillRect(coords[0], coords[1], 4, 4);
         }
 
+
+        function drawValve(coords, flag) {
+            let color = flag === true ? 'white' : 'red';
+            var canvas = document.getElementById("field");
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = color;
+            ctx.fillRect(coords[0], coords[1], 4, 4);
+        }
 
         var jsonObj;
         window.addEventListener("click", checkMouseClick);
 
         function checkMouseClick(mouse) {
-            jsonObj = mouse.clientX + " , " + mouse.clientY;
+            jsonObj = mouse.clientX + " " + mouse.clientY;
             playerConnection.send(JSON.stringify(jsonObj));
         }
 
@@ -82,16 +136,16 @@
 
         function checkKeyPress(key) {
             if (key.keyCode === 87) {
-                jsonObj = "UP";
+                jsonObj = 0;
             }
             if (key.keyCode === 65) {
-                jsonObj = "LEFT";
+                jsonObj = 1;
             }
             if (key.keyCode === 68) {
-                jsonObj = "RIGHT";
+                jsonObj = 2;
             }
             if (key.keyCode === 83) {
-                jsonObj = "DOWN";
+                jsonObj = 3;
             }
             playerConnection.send(JSON.stringify(jsonObj));
         }
@@ -103,6 +157,7 @@
             color: #22acff;
             margin: 0;
         }
+
         #field {
             margin-left: 40px;
             margin-top: 10px;
@@ -110,12 +165,25 @@
             height: 600px;
         }
     </style>
+
+
 </head>
-
-
 <body onload="connect();" onunload="disconnect()">
-<div id="contentfile"><%--<b>NOW ON AIR</b><br>--%></div>
-<svg id='field'></svg>
+<div id="button"><button style="position: absolute; top:50%; left:50%;" onclick="myFunction()">Play</button> </div>
+<canvas id="field" width="1200" height="600">
+    <script type="text/javascript">
+        var canvas = document.getElementById("field");
+        var ctx = canvas.getContext('2d');
+        ctx.font = "bold 50px Calibri";
+        ctx.fillStyle = "red";
+        ctx.textAlign = "center";
+        ctx.fillText("Emer", canvas.width/2-15, canvas.height/2-30);
+        ctx.fillStyle = 'rgb(0, 168, 243)';
+        ctx.textAlign = "center";
+        ctx.fillText("loc", canvas.width/2+70, canvas.height/2-30);
+    </script>
+</canvas>
+
 </body>
 </html>
 

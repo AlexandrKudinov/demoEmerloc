@@ -1,10 +1,5 @@
 package websocket;
 
-import com.google.gson.Gson;
-import logic.MainWindow;
-import logic.Pipeline;
-import logic.Structure;
-import logic.WaterSupplyMap;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
@@ -32,13 +27,14 @@ public class GameServerEndPoint {
         return currentGameSession;
     }
 
-    public void createGameSession() {
+    public GameSession createGameSession() {
         Session playerOneSession = playersSessions.remove();
         Session playerTwoSession = playersSessions.remove();
         GameSession gameSession = new GameSession(playerOneSession, playerTwoSession);
         gameSessions.add(gameSession);
-        currentGameSession=gameSession;
+        currentGameSession = gameSession;
         gameSession.sendMessageToPlayers("The game starts!");
+        return gameSession;
     }
 
     public static GameSession getGameSession(Session session) {
@@ -55,10 +51,11 @@ public class GameServerEndPoint {
         playersSessions.add(userSession);
         System.out.println("user added: " + userSession.getId());
         if (playersSessions.size() == 2) {
-            createGameSession();
+            GameSession gameSession = createGameSession();
+            String gameStage = gameSession.generateGson();
+            gameSession.sendMessageToPlayers(gameStage);
         }
     }
-
 
     @OnClose
     public void onClose(Session userSession) {
@@ -67,7 +64,7 @@ public class GameServerEndPoint {
             playersSessions.remove(userSession);
         } else {
             Session session = gameSession.getAnotherPlayerSession(userSession);
-            session.getAsyncRemote().sendText("another player leaved game in fear, you win!");
+            session.getAsyncRemote().sendText("-1");
             onOpen(session);
             gameSessions.remove(gameSession);
         }
@@ -76,14 +73,46 @@ public class GameServerEndPoint {
 
     @OnMessage
     public void onMessage(String message, Session userSession) {
+        int i = Integer.parseInt(userSession.getId());
         System.out.println(userSession.getId() + " : " + message);
+
         GameSession gameSession = getGameSession(userSession);
-        currentGameSession=gameSession;
+        currentGameSession = gameSession;
+
         if (gameSession == null) {
-            userSession.getAsyncRemote().sendText(" waiting another player");
+            userSession.getAsyncRemote().sendText("1");
         } else {
-            gameSession.sendMessageToPlayers(message);
-            gameSession.generateGson();
+            if (message.equals("0")) {
+                if(i%2==0){
+                    gameSession.playerOneUp();
+                }else {
+                    gameSession.playerTwoUp();
+                }
+            }
+            if (message.equals("1")) {
+                if(i%2==0){
+                    gameSession.playerOneLeft();
+                }else {
+                    gameSession.playerTwoLeft();
+                }
+            }
+            if (message.equals("2")) {
+                if(i%2==0){
+                    gameSession.playerOneRight();
+                }else {
+                    gameSession.playerTwoRight();
+                }
+            }
+            if (message.equals("3")) {
+                if(i%2==0){
+                    gameSession.playerOneDown();
+                }else {
+                    gameSession.playerTwoDown();
+                }
+            }
+            //gameSession.sendMessageToPlayers(message);
+            String gameStage = gameSession.generateGson();
+            gameSession.sendMessageToPlayers(gameStage);
         }
     }
 }

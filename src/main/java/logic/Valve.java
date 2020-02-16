@@ -74,21 +74,21 @@ public class Valve {
 
         switch (type) {
             case UP:
-                this.j = baseX + j * Display.BLOCK + BLOCK / 5 * 2;
-                this.i = Display.baseY + i * Display.BLOCK + BLOCK / 5;
+                this.j =  j * Display.BLOCK + BLOCK / 5 * 2;  //+baseX
+                this.i =  i * Display.BLOCK + BLOCK / 5;     //+baseY
                 break;
             case LEFT:
-                this.j = baseX + j * Display.BLOCK + BLOCK / 5;
-                this.i = Display.baseY + i * Display.BLOCK + BLOCK / 5 * 2;
+                this.j =  j * Display.BLOCK + BLOCK / 5;
+                this.i =  i * Display.BLOCK + BLOCK / 5 * 2;
                 break;
             case RIGHT:
-                this.i = Display.baseY + i * Display.BLOCK + BLOCK / 5 * 2;
-                this.j = baseX + j * Display.BLOCK + BLOCK / 5 * 3;
+                this.i =  i * Display.BLOCK + BLOCK / 5 * 2;
+                this.j =  j * Display.BLOCK + BLOCK / 5 * 3;
                 break;
 
             case DOWN:
-                this.i = Display.baseY + i * Display.BLOCK + BLOCK / 5 * 3;
-                this.j = baseX + j * Display.BLOCK + BLOCK / 5 * 2;
+                this.i =  i * Display.BLOCK + BLOCK / 5 * 3;
+                this.j =  j * Display.BLOCK + BLOCK / 5 * 2;
         }
 
 

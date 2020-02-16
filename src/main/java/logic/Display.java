@@ -228,7 +228,6 @@ public class Display {
                         showHouseBlock(g, baseX + node.getJ() * BLOCK, baseY + node.getI() * BLOCK, open);
                     }
                 }
-
             }
 
             for (Valve valve : waterSupplyMap.getValves()) {
