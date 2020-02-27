@@ -12,14 +12,50 @@ import static logic.Display.*;
 import static logic.LocType.*;
 
 public class GameSession {
+
+    // private boolean onEmergency = false;
+    private boolean playerOneOnEmergency = false;
+    private boolean playerTwoOnEmergency = false;
+
     private Session playerOneSession;
     private Session playerTwoSession;
     private WaterSupplyMap waterSupplyMap = new WaterSupplyMap();
     private Structure structure = new Structure();
-    GameStage gameStage = new GameStage();
-    ToScreen toScreen;
-    Van van1;
-    Van van2;
+    private GameStage gameStage = new GameStage();
+    private ToScreen toScreen;
+    private Van van1;
+    private Van van2;
+    private int playerOneScore = 0;
+    private int playerTwoScore = 0;
+
+    public int getPlayerTwoScore() {
+        return playerTwoScore;
+    }
+
+    public int getPlayerOneScore() {
+        return playerOneScore;
+    }
+
+    public void setPlayerOneScore(int playerOneScore) {
+        this.playerOneScore = playerOneScore;
+    }
+
+    public void setPlayerOneOnEmergency(boolean playerOneOnEmergency) {
+        this.playerOneOnEmergency = playerOneOnEmergency;
+    }
+
+    public void setPlayerTwoOnEmergency(boolean playerTwoOnEmergency) {
+        this.playerTwoOnEmergency = playerTwoOnEmergency;
+    }
+
+
+    public boolean isPlayerOneOnEmergency() {
+        return playerOneOnEmergency;
+    }
+
+    public boolean isPlayerTwoOnEmergency() {
+        return playerTwoOnEmergency;
+    }
 
     public WaterSupplyMap getWaterSupplyMap() {
         return waterSupplyMap;
@@ -48,6 +84,7 @@ public class GameSession {
 
     public void playerOneUp() {
         van1.turnUp();
+
     }
 
     public void playerTwoUp() {
@@ -56,6 +93,7 @@ public class GameSession {
 
     public void playerOneDown() {
         van1.turnDown();
+
     }
 
     public void playerTwoDown() {
@@ -64,18 +102,41 @@ public class GameSession {
 
     public void playerOneLeft() {
         van1.turnLeft();
+
     }
 
     public void playerTwoLeft() {
         van2.turnLeft();
+
     }
 
     public void playerOneRight() {
         van1.turnRight();
+
     }
 
     public void playerTwoRight() {
         van2.turnRight();
+    }
+
+    public boolean playerTwoOnEmergency() {
+        if (van2.onEmergency()) {
+            playerTwoOnEmergency = true;
+            return true;
+        } else {
+            playerTwoOnEmergency = false;
+            return false;
+        }
+    }
+
+    public boolean playerOneOnEmergency() {
+        if (van1.onEmergency()) {
+            playerOneOnEmergency = true;
+            return true;
+        } else {
+            playerOneOnEmergency = false;
+            return false;
+        }
     }
 
     public boolean containSession(Session session) {
@@ -107,10 +168,21 @@ public class GameSession {
         playerTwoSession.getAsyncRemote().sendText(message);
     }
 
-    public String generateGson() {
+    public String generateGson(boolean onEmergency) {
         gameStage.clearAll();
-        //  List<ToScreen> houses = new LinkedList<>();
+       // waterSupplyMap.check();
         for (Pipeline pipeline : waterSupplyMap.getPipelines()) {
+            boolean open = pipeline.isOpen();
+
+            for (House house : pipeline.getHouses()) {
+                for (Node node : house.getHouseFragments()) {
+                    List<Integer> houseCoords = new LinkedList<>();
+                    houseCoords.add(node.getJ() * BLOCK);
+                    houseCoords.add(node.getI() * BLOCK);
+                    toScreen = new ToScreen(houseCoords, open);
+                    gameStage.addHouse(toScreen);
+                }
+            }
             if (pipeline.isAccident()) {
                 for (Pipe pipe : pipeline.getPipes().keySet()) {
                     if (pipe.isAccident()) {
@@ -119,123 +191,118 @@ public class GameSession {
                         List<Integer> accidentCoords = new LinkedList<>();
                         accidentCoords.add(node.getJ() * BLOCK);
                         accidentCoords.add(node.getI() * BLOCK);
-                        ToScreen accidentToScreen = new ToScreen(accidentCoords, true);
+                        ToScreen accidentToScreen = new ToScreen(accidentCoords, open);
                         gameStage.addEmergency(accidentToScreen);
                         break;
                     }
                 }
             }
+            if (onEmergency) {
+                Map<Pipe, List<LocType>> pipelineMap = pipeline.getPipes();
+                //pipeline.updateStatus();
 
-            for (House house : pipeline.getHouses()) {
-                for (Node node : house.getHouseFragments()) {
-                    List<Integer> houseCoords = new LinkedList<>();
-                    houseCoords.add(node.getJ() * BLOCK);
-                    houseCoords.add(node.getI() * BLOCK);
-                    toScreen = new ToScreen(houseCoords, true);
-                    gameStage.addHouse(toScreen);
+                for (Map.Entry<Pipe, List<LocType>> listEntry : pipelineMap.entrySet()) {
+                    int i = listEntry.getKey().getNode().getI();
+                    int j = listEntry.getKey().getNode().getJ();
+                    Pipe pipe = listEntry.getKey();
+
+                    if (listEntry.getValue().contains(UP)) {
+                        if (pipe.containValve() && pipe.getValve().getType() == UP) {
+                            // showUpDot(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
+                            List<Integer> upDotCoords = new LinkedList<>();
+                            upDotCoords.add(j * BLOCK + BLOCK / 5 * 2);
+                            upDotCoords.add(i * BLOCK);
+                            toScreen = new ToScreen(upDotCoords, open);
+                            gameStage.addDot(toScreen);
+
+                        } else {
+                            //  showUpPlumb(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
+                            List<Integer> upPlumbCoords = new LinkedList<>();
+                            upPlumbCoords.add(j * BLOCK + BLOCK / 5 * 2);
+                            upPlumbCoords.add(i * BLOCK);
+                            toScreen = new ToScreen(upPlumbCoords, open);
+                            gameStage.addVerticalPlumb(toScreen);
+                        }
+                    }
+                    if (listEntry.getValue().contains(LEFT)) {
+                        if (pipe.containValve() && pipe.getValve().getType() == LEFT ||
+                                pipe.containFourParts()) {
+                            // showLeftDot(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
+                            List<Integer> leftDotCoords = new LinkedList<>();
+                            leftDotCoords.add(j * BLOCK);
+                            leftDotCoords.add(i * BLOCK + BLOCK / 5 * 2);
+                            toScreen = new ToScreen(leftDotCoords, open);
+                            gameStage.addDot(toScreen);
+
+
+                        } else {
+                            // showLeftPlumb(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
+                            List<Integer> leftPlumbCoords = new LinkedList<>();
+                            leftPlumbCoords.add(j * BLOCK);
+                            leftPlumbCoords.add(i * BLOCK + BLOCK / 5 * 2);
+                            toScreen = new ToScreen(leftPlumbCoords, open);
+                            gameStage.addHorizontalPlumb(toScreen);
+
+                        }
+                    }
+                    if (listEntry.getValue().contains(DOWN)) {
+                        if (pipe.containValve() && pipe.getValve().getType() == DOWN) {
+                            //  showDownDot(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
+                            List<Integer> downDotCoords = new LinkedList<>();
+                            downDotCoords.add(j * BLOCK + BLOCK / 5 * 2);
+                            downDotCoords.add(i * BLOCK + BLOCK / 5 * 4);
+                            toScreen = new ToScreen(downDotCoords, open);
+                            gameStage.addDot(toScreen);
+                        } else {
+                            // showDownPlumb(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
+                            List<Integer> downPlumbCoords = new LinkedList<>();
+                            downPlumbCoords.add(j * BLOCK + BLOCK / 5 * 2);
+                            downPlumbCoords.add(i * BLOCK + BLOCK / 5 * 2);
+                            toScreen = new ToScreen(downPlumbCoords, open);
+                            gameStage.addVerticalPlumb(toScreen);
+
+                        }
+                    }
+                    if (listEntry.getValue().contains(RIGHT)) {
+                        if (pipe.containValve() && pipe.getValve().getType() == RIGHT ||
+                                pipe.containFourParts()) {
+                            //  showRightDot(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
+                            List<Integer> rightDotCoords = new LinkedList<>();
+                            rightDotCoords.add(j * BLOCK + BLOCK / 5 * 4);
+                            rightDotCoords.add(i * BLOCK + BLOCK / 5 * 2);
+                            toScreen = new ToScreen(rightDotCoords, open);
+                            gameStage.addDot(toScreen);
+
+                        } else {
+                            //showRightPlumb(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
+                            List<Integer> rightPlumbCoords = new LinkedList<>();
+                            rightPlumbCoords.add(j * BLOCK + BLOCK / 5 * 2);
+                            rightPlumbCoords.add(i * BLOCK + BLOCK / 5 * 2);
+                            toScreen = new ToScreen(rightPlumbCoords, open);
+                            gameStage.addHorizontalPlumb(toScreen);
+                        }
+                    }
+
+                }
+                for (Valve valve : waterSupplyMap.getValves()) {
+                    List<Integer> valveCoords = new LinkedList<>();
+                    valveCoords.add(valve.getJ());
+                    valveCoords.add(valve.getI());
+                    toScreen = new ToScreen(valveCoords, valve.isOpen());
+                    gameStage.addValve(toScreen);
+                    // showValve(g, valve.getJ(), valve.getI(), valve.isOpen());
                 }
             }
-            Map<Pipe, List<LocType>> pipelineMap = pipeline.getPipes();
-            //pipeline.updateStatus();
-            boolean open = pipeline.isOpen();
-            for (Map.Entry<Pipe, List<LocType>> listEntry : pipelineMap.entrySet()) {
-                int i = listEntry.getKey().getNode().getI();
-                int j = listEntry.getKey().getNode().getJ();
-                Pipe pipe = listEntry.getKey();
 
-                if (listEntry.getValue().contains(UP)) {
-                    if (pipe.containValve() && pipe.getValve().getType() == UP) {
-                        // showUpDot(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
-                        List<Integer> upDotCoords = new LinkedList<>();
-                        upDotCoords.add(j * BLOCK + BLOCK / 5 * 2);
-                        upDotCoords.add(i * BLOCK);
-                        toScreen = new ToScreen(upDotCoords, true);
-                        gameStage.addDot(toScreen);
-
-                    } else {
-                        //  showUpPlumb(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
-                        List<Integer> upPlumbCoords = new LinkedList<>();
-                        upPlumbCoords.add(j * BLOCK + BLOCK / 5 * 2);
-                        upPlumbCoords.add(i * BLOCK);
-                        toScreen = new ToScreen(upPlumbCoords, true);
-                        gameStage.addVerticalPlumb(toScreen);
-                    }
-                }
-                if (listEntry.getValue().contains(LEFT)) {
-                    if (pipe.containValve() && pipe.getValve().getType() == LEFT ||
-                            pipe.containFourParts()) {
-                        // showLeftDot(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
-                        List<Integer> leftDotCoords = new LinkedList<>();
-                        leftDotCoords.add(j * BLOCK);
-                        leftDotCoords.add(i * BLOCK + BLOCK / 5 * 2);
-                        toScreen = new ToScreen(leftDotCoords, true);
-                        gameStage.addDot(toScreen);
-
-
-                    } else {
-                        // showLeftPlumb(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
-                        List<Integer> leftPlumbCoords = new LinkedList<>();
-                        leftPlumbCoords.add(j * BLOCK);
-                        leftPlumbCoords.add(i * BLOCK + BLOCK / 5 * 2);
-                        toScreen = new ToScreen(leftPlumbCoords, true);
-                        gameStage.addHorizontalPlumb(toScreen);
-
-                    }
-                }
-                if (listEntry.getValue().contains(DOWN)) {
-                    if (pipe.containValve() && pipe.getValve().getType() == DOWN) {
-                        //  showDownDot(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
-                        List<Integer> downDotCoords = new LinkedList<>();
-                        downDotCoords.add(j * BLOCK + BLOCK / 5 * 2);
-                        downDotCoords.add(i * BLOCK + BLOCK / 5 * 4);
-                        toScreen = new ToScreen(downDotCoords, true);
-                        gameStage.addDot(toScreen);
-                    } else {
-                        // showDownPlumb(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
-                        List<Integer> downPlumbCoords = new LinkedList<>();
-                        downPlumbCoords.add(j * BLOCK + BLOCK / 5 * 2);
-                        downPlumbCoords.add(i * BLOCK + BLOCK / 5 * 2);
-                        toScreen = new ToScreen(downPlumbCoords, true);
-                        gameStage.addVerticalPlumb(toScreen);
-
-                    }
-                }
-                if (listEntry.getValue().contains(RIGHT)) {
-                    if (pipe.containValve() && pipe.getValve().getType() == RIGHT ||
-                            pipe.containFourParts()) {
-                        //  showRightDot(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
-                        List<Integer> rightDotCoords = new LinkedList<>();
-                        rightDotCoords.add(j * BLOCK + BLOCK / 5 * 4);
-                        rightDotCoords.add(i * BLOCK + BLOCK / 5 * 2);
-                        toScreen = new ToScreen(rightDotCoords, true);
-                        gameStage.addDot(toScreen);
-
-                    } else {
-                        //showRightPlumb(g, baseX + j * BLOCK, baseY + i * BLOCK, open);
-                        List<Integer> rightPlumbCoords = new LinkedList<>();
-                        rightPlumbCoords.add(j * BLOCK + BLOCK / 5 * 2);
-                        rightPlumbCoords.add(i * BLOCK + BLOCK / 5 * 2);
-                        toScreen = new ToScreen(rightPlumbCoords, true);
-                        gameStage.addHorizontalPlumb(toScreen);
-                    }
-                }
-
-            }
 //            for (House house : pipeline.getHouses()) {
 //                for (Node node : house.getHouseFragments()) {
 //                    showHouseBlock(g, baseX + node.getJ() * BLOCK, baseY + node.getI() * BLOCK, open);
 //                }
 //            }
+
+
         }
-        //  gameStage.setHouses(houses);
-        for (Valve valve : waterSupplyMap.getValves()) {
-            List<Integer> valveCoords = new LinkedList<>();
-            valveCoords.add(valve.getJ());
-            valveCoords.add(valve.getI());
-            toScreen = new ToScreen(valveCoords, true);
-            gameStage.addValve(toScreen);
-            // showValve(g, valve.getJ(), valve.getI(), valve.isOpen());
-        }
+
 
         List<Integer> playerOneCoords = new LinkedList<>();
         playerOneCoords.add(structure.getVan1().getJ());
@@ -247,9 +314,47 @@ public class GameSession {
         playerTwoCoords.add(structure.getVan2().getI());
         gameStage.setPlayerTwoPosition(playerTwoCoords);
 
+        gameStage.setPlayerOneScore(playerOneScore);
+        gameStage.setPlayerTwoScore(playerTwoScore);
+
         Gson gson = new Gson();
         return gson.toJson(gameStage);
     }
 
+    public void mouseClickOnValve(int X, int Y) {
+        for (Valve valve : waterSupplyMap.getValves()) {
+            if ((X >= valve.getJ() && X <= valve.getJ() + BLOCK / 5) &&
+                    ((Y >= valve.getI() && Y <= valve.getI() + BLOCK / 5))) {
+
+                valve.changeStage();
+                checkPipelineStage(valve.getFirstPipeline());
+                checkPipelineStage(valve.getSecondPipeline());
+                //     waterSupplyMap.check()
+                if ((!valve. getFirstPipeline().isOpen() && valve.getFirstPipeline().isAccident())||
+                        (!valve.getSecondPipeline().isOpen() && valve.getSecondPipeline().isAccident())){
+                    if(playerOneOnEmergency){
+                        playerOneScore++;
+                    }
+                    if(playerTwoOnEmergency){
+                        playerTwoScore++;
+                    }
+                }
+                return;
+            }
+        }
+    }
+
+    private void checkPipelineStage(Pipeline pipeline){
+        for (Valve valve:pipeline.getValves()){
+            if(valve.isOpen()){
+                return;
+            }
+        }
+        pipeline.setStage(false);
+    }
+
+
+
 
 }
+

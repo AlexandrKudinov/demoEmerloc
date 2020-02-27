@@ -10,6 +10,35 @@ public class Valve {
     private Pipeline firstPipeline;
     private Pipeline secondPipeline;
     private boolean mysticOpen = true;
+    private Pipe pipe;
+
+    public boolean lastOpenInFirstPipeline(){
+            for(Valve valve:firstPipeline.getValves()){
+               if (valve!=this && !valve.isOpen()){
+                   continue;
+               }else return false;
+            }
+            return true;
+    }
+
+
+    public boolean lastOpenInSecondPipeline(){
+        for(Valve valve:secondPipeline.getValves()){
+            if (valve!=this && !valve.isOpen()){
+                continue;
+            }else return false;
+        }
+        return true;
+    }
+
+
+    public Pipe getPipe() {
+        return pipe;
+    }
+
+    public void setPipe(Pipe pipe) {
+        this.pipe = pipe;
+    }
 
     public boolean isMysticOpen() {
         return mysticOpen;

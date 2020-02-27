@@ -11,19 +11,4 @@ public class ToScreen{
         this.flag=flag;
     }
 
-    public List<Integer> getCoords() {
-        return coords;
-    }
-
-    public void setCoords(List<Integer> coords) {
-        this.coords = coords;
-    }
-
-    public boolean isFlag() {
-        return flag;
-    }
-
-    public void setFlag(boolean flag) {
-        this.flag = flag;
-    }
 }

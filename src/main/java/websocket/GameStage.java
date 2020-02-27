@@ -6,15 +6,16 @@ import java.util.List;
 
 
 class GameStage {
-    List<ToScreen> houses = new LinkedList<>();
-    List<ToScreen> valves = new LinkedList<>();
-    List<ToScreen> emergencies = new LinkedList<>();
-    List<ToScreen> dots = new LinkedList<>();
-    List<ToScreen> verticalPlumbs = new LinkedList<>();
-    List<ToScreen> horizontalPlumbs = new LinkedList<>();
-    List<Integer> playerOnePosition = new LinkedList<>();
-    List<Integer> playerTwoPosition = new LinkedList<>();
-
+    private List<ToScreen> houses = new LinkedList<>();
+    private List<ToScreen> valves = new LinkedList<>();
+    private List<ToScreen> emergencies = new LinkedList<>();
+    private List<ToScreen> dots = new LinkedList<>();
+    private List<ToScreen> verticalPlumbs = new LinkedList<>();
+    private List<ToScreen> horizontalPlumbs = new LinkedList<>();
+    private List<Integer> playerOnePosition = new LinkedList<>();
+    private List<Integer> playerTwoPosition = new LinkedList<>();
+    private int playerOneScore;
+    private int playerTwoScore;
 
     public void clearAll() {
         houses.clear();
@@ -27,26 +28,45 @@ class GameStage {
         playerTwoPosition.clear();
     }
 
+    public int getPlayerOneScore() {
+        return playerOneScore;
+    }
 
-    public void addHouse(ToScreen house){
+    public int getPlayerTwoScore() {
+        return playerTwoScore;
+    }
+
+    public void setPlayerOneScore(int playerOneScore) {
+        this.playerOneScore = playerOneScore;
+    }
+
+    public void setPlayerTwoScore(int playerTwoScore) {
+        this.playerTwoScore = playerTwoScore;
+    }
+
+    public void addHouse(ToScreen house) {
         houses.add(house);
     }
-    public void addValve(ToScreen valve){
+
+    public void addValve(ToScreen valve) {
         valves.add(valve);
     }
-    public void addEmergency(ToScreen emergency){
+
+    public void addEmergency(ToScreen emergency) {
         emergencies.add(emergency);
     }
-    public void addDot(ToScreen dot){
+
+    public void addDot(ToScreen dot) {
         dots.add(dot);
     }
-    public void addHorizontalPlumb(ToScreen horizontalPlumb){
+
+    public void addHorizontalPlumb(ToScreen horizontalPlumb) {
         horizontalPlumbs.add(horizontalPlumb);
     }
-    public void addVerticalPlumb(ToScreen verticalPlumb){
+
+    public void addVerticalPlumb(ToScreen verticalPlumb) {
         verticalPlumbs.add(verticalPlumb);
     }
-
 
 
     public List<ToScreen> getHouses() {

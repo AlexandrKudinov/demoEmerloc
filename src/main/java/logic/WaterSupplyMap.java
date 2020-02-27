@@ -55,6 +55,7 @@ public class WaterSupplyMap {
                         pipe.addParts(UP, LEFT, RIGHT);
                         Valve valve = new Valve(UP, i, j);
                         pipe.setValve(valve);
+                        valve.setPipe(pipe);
                         valves.add(valve);
                         continue;
                     }
@@ -76,6 +77,7 @@ public class WaterSupplyMap {
                         pipe.addParts(DOWN, LEFT, RIGHT);
                         Valve valve = new Valve(DOWN, i, j);
                         pipe.setValve(valve);
+                        valve.setPipe(pipe);
                         valves.add(valve);
                         continue;
                     }
@@ -116,6 +118,7 @@ public class WaterSupplyMap {
                         pipe.addParts(DOWN, LEFT, UP);
                         Valve valve = new Valve(LEFT, i, j);
                         pipe.setValve(valve);
+                        valve.setPipe(pipe);
                         valves.add(valve);
                         continue;
                     }
@@ -126,6 +129,7 @@ public class WaterSupplyMap {
                         pipe.addParts(DOWN, RIGHT, UP);
                         Valve valve = new Valve(RIGHT, i, j);
                         pipe.setValve(valve);
+                        valve.setPipe(pipe);
                         valves.add(valve);
                         continue;
                     }
@@ -287,12 +291,12 @@ public class WaterSupplyMap {
 
     public void generateAccidents() {
         for (Pipeline pipeline : pipelines) {
-            if (pipeline.getHouses().size() > 2) {
+            if (pipeline.getHouses().size() > 0) {
                 pipeline.setAccident();
                 int rnd = (int) (Math.random() * pipeline.getPipes().size() - 2);
                 List<Pipe> pipes = new ArrayList<>(pipeline.getPipes().keySet());
                 Pipe pipe = pipes.get(rnd + 1);
-                if (pipe.getIntake().isEmpty()) {
+                if (pipe.getParts().size()==2  && pipe.getIntake().isEmpty()) {
                     pipe.setAccident();
                 }
             }

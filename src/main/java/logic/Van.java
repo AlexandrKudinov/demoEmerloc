@@ -35,6 +35,13 @@ private Structure structure;
     }
 
 
+    public boolean onEmergency() {
+        int nodeI = (i) / BLOCK;
+        int nodeJ = (j) / BLOCK;
+        Node node = structure.getMap()[nodeI][nodeJ];
+        return node.getPipe().isAccident();
+    }
+
     public int getI() {
         return i;
     }

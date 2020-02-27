@@ -7,41 +7,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e76f4ca3-139c-4ccd-b602-7d9f75ac1624" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/websocket/GameStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/websocket/ToScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Van1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Van2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/gson-2.8.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/logic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Emerloc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Emerloc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Display.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Session.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Structure$NodeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Structure$NodeType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Structure.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Structure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Valve$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Valve$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Valve.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Valve.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Van.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/Van.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/WaterSupplyMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/logic/WaterSupplyMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/websocket/GameServerEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/websocket/GameServerEndPoint.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/websocket/GameSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/websocket/GameSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/websocket/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/websocket/GameStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/websocket/ToScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/classes/websocket/ToScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/chat.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MyChat_war_exploded/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Session.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Structure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Structure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/GameField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Valve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Valve.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Van.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Van.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/WaterSupplyMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/WaterSupplyMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/GameServerEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/GameServerEndPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/GameSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/GameSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logic/Display.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/Session.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/Structure$NodeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logic/Structure$NodeType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/Structure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logic/Structure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/GameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/GameStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/ToScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/ToScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logic/Valve$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logic/Valve$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/logic/Valve.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logic/Valve.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/logic/Van.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logic/Van.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logic/WaterSupplyMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logic/WaterSupplyMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/websocket/GameServerEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/GameServerEndPoint.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/websocket/GameSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/GameSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/GameStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/ToScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/ToScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/chat.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -54,43 +51,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameSession.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-568">
-              <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1371#1372#0" expanded="true" />
-                <element signature="e#1433#1434#0" expanded="true" />
-                <element signature="e#1499#1500#0" expanded="true" />
-                <element signature="e#1565#1566#0" expanded="true" />
-                <element signature="e#1631#1632#0" expanded="true" />
-                <element signature="e#1697#1698#0" expanded="true" />
-                <element signature="e#1765#1766#0" expanded="true" />
-                <element signature="e#1833#1834#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/Display.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameServerEndPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+            <state relative-caret-position="918">
+              <caret line="99" column="41" selection-start-line="99" selection-start-column="41" selection-end-line="99" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1582741332366" expanded="true" signature="3782:4040" ph="..." />
+                <marker date="1582741332366" expanded="true" signature="8278:8279" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Emerloc.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Van1.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/logic.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameServerEndPointConfigurator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/logic/Structure.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,13 +123,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/logic/Pipeline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="153">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,20 +170,24 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/Session.java" />
         <option value="$PROJECT_DIR$/src/main/java/websocket/GameServerEndPointConfigurator.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Pipeline.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/WaterSupplyMap.java" />
         <option value="$PROJECT_DIR$/web/chat.js" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/GameField.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/MainWindow.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Structure.java" />
-        <option value="$PROJECT_DIR$/src/main/java/websocket/ToScreen.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/Valve.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Display.java" />
-        <option value="$PROJECT_DIR$/src/main/java/websocket/GameStage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/GameField.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Van.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/websocket/ToScreen.java" />
+        <option value="$PROJECT_DIR$/web/graphicEngine.js" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/WaterSupplyMap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/websocket/GameStage.java" />
+        <option value="$PROJECT_DIR$/web/logi.js" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/Valve.java" />
         <option value="$PROJECT_DIR$/src/main/java/websocket/GameSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/websocket/GameServerEndPoint.java" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/logic.js" />
       </list>
     </option>
   </component>
@@ -188,7 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -205,24 +233,73 @@
             <path>
               <item name="Emerloc" type="b2602c69:ProjectViewProjectNode" />
               <item name="Emerloc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Emerloc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Emerloc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Emerloc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Emerloc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Emerloc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Emerloc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="websocket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Emerloc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Emerloc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Emerloc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Emerloc" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Emerloc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Emerloc" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Emerloc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Emerloc" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581813633002" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582735483042" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Trainee" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -438,18 +515,40 @@
       <workItem from="1581492295811" duration="1108000" />
       <workItem from="1581622309242" duration="3516000" />
       <workItem from="1581695091419" duration="3570000" />
-      <workItem from="1581770392812" duration="39129000" />
+      <workItem from="1581770392812" duration="40917000" />
+      <workItem from="1581857819695" duration="1727000" />
+      <workItem from="1581919355023" duration="221000" />
+      <workItem from="1581926446911" duration="5537000" />
+      <workItem from="1581942108435" duration="7444000" />
+      <workItem from="1581952851226" duration="1216000" />
+      <workItem from="1582034475734" duration="125000" />
+      <workItem from="1582126131830" duration="6813000" />
+      <workItem from="1582209739354" duration="2107000" />
+      <workItem from="1582291574169" duration="651000" />
+      <workItem from="1582292736287" duration="645000" />
+      <workItem from="1582304578590" duration="383000" />
+      <workItem from="1582359699086" duration="229000" />
+      <workItem from="1582576950247" duration="1210000" />
+      <workItem from="1582611361272" duration="18407000" />
+      <workItem from="1582658582974" duration="3231000" />
+      <workItem from="1582706473202" duration="2254000" />
+      <workItem from="1582709222108" duration="850000" />
+      <workItem from="1582710280104" duration="3731000" />
+      <workItem from="1582720558741" duration="8733000" />
+      <workItem from="1582735614002" duration="427000" />
+      <workItem from="1582741150639" duration="3511000" />
+      <workItem from="1582788883764" duration="3186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169109000" />
+    <option name="totallyTimeSpent" value="243535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2048583" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22834007" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -457,10 +556,9 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Duplicate detector" weight="0.26110125" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21136767" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.088809945" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -473,6 +571,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Duplicate detector" order="15" weight="0.26110125" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -487,7 +586,7 @@
       <window_info anchor="right" id="Bean Validation" order="11" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23319837" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20728745" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -497,7 +596,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.14209591" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.088809945" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -510,6 +609,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Duplicate detector" order="15" weight="0.26110125" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -529,82 +629,37 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/web/index.html" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/demo.html" />
     <entry file="file://$PROJECT_DIR$/web/styles.css" />
     <entry file="file://$PROJECT_DIR$/web/home.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Pipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Van.png" />
-    <entry file="file://$PROJECT_DIR$/Van1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Van2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/Session.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Node.java">
+    <entry file="file://$PROJECT_DIR$/web/Title.png" />
+    <entry file="file://$PROJECT_DIR$/web/Waiting.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="1428">
+          <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Pipeline.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/GameField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2737">
-          <caret line="175" column="51" selection-start-line="175" selection-start-column="51" selection-end-line="175" selection-end-column="51" />
+        <state relative-caret-position="227">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/NodeType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/LocType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/ToScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/House.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="357">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="44" selection-start-column="3" selection-end-line="60" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -613,8 +668,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        <state relative-caret-position="68">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#410#411#0" expanded="true" />
@@ -623,46 +678,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Structure.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/LocType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="282" column="20" lean-forward="true" selection-start-line="282" selection-start-column="20" selection-end-line="282" selection-end-column="20" />
+        <state relative-caret-position="272">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/NodeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Van2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="73" column="5" selection-start-line="53" selection-start-column="3" selection-end-line="73" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13004#13005#0" expanded="true" />
-            <element signature="e#13031#13032#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Valve.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Pipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="77" column="61" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
+        <state relative-caret-position="-320">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/ToScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5219">
+          <caret line="342" column="13" selection-start-line="342" selection-start-column="13" selection-end-line="342" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameStage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+            <element signature="e#1028#1029#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#1231#1232#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/WaterSupplyMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameServerEndPointConfigurator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/GameField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1082">
-          <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
+        <state relative-caret-position="4845">
+          <caret line="294" column="28" selection-start-line="294" selection-start-column="28" selection-end-line="294" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -671,8 +773,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/Van.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        <state relative-caret-position="595">
+          <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
           <folding>
             <element signature="e#147#148#0" expanded="true" />
             <element signature="e#189#190#0" expanded="true" />
@@ -680,119 +782,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameStage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Valve.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1624">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="1394">
+          <caret line="98" column="46" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1200#1201#0" expanded="true" />
-            <element signature="e#1227#1228#0" expanded="true" />
-            <element signature="e#1275#1276#0" expanded="true" />
-            <element signature="e#1308#1309#0" expanded="true" />
-            <element signature="e#1358#1359#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1442#1443#0" expanded="true" />
-            <element signature="e#1475#1476#0" expanded="true" />
-            <element signature="e#1153#1154#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1252#1253#0" expanded="true" />
-            <element signature="e#1297#1298#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="e#1074#1075#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1154#1155#0" expanded="true" />
-            <element signature="e#1216#1217#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
-            <element signature="e#1332#1333#0" expanded="true" />
-            <element signature="e#1384#1385#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-            <element signature="e#1978#1979#0" expanded="true" />
-            <element signature="e#2008#2009#0" expanded="true" />
-            <element signature="e#2062#2063#0" expanded="true" />
-            <element signature="e#2100#2101#0" expanded="true" />
-            <element signature="e#2239#2240#0" expanded="true" />
-            <element signature="e#2263#2264#0" expanded="true" />
-            <element signature="e#2234#2235#0" expanded="true" />
-            <element signature="e#2276#2277#0" expanded="true" />
-            <element signature="e#2685#2686#0" expanded="true" />
-            <element signature="e#2725#2726#0" expanded="true" />
-            <element signature="e#2798#2799#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
-            <element signature="e#2907#2908#0" expanded="true" />
-            <element signature="e#2947#2948#0" expanded="true" />
-            <element signature="e#3020#3021#0" expanded="true" />
-            <element signature="e#3078#3079#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+            <element signature="e#866#867#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1145#1146#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+            <element signature="e#2178#2179#0" expanded="true" />
+            <element signature="e#2215#2216#0" expanded="true" />
+            <element signature="e#2275#2276#0" expanded="true" />
+            <element signature="e#2325#2326#0" expanded="true" />
+            <element signature="e#2387#2388#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+            <element signature="e#3292#3293#0" expanded="true" />
+            <element signature="e#3319#3320#0" expanded="true" />
+            <element signature="e#3344#3345#0" expanded="true" />
+            <element signature="e#3368#3369#0" expanded="true" />
+            <element signature="e#3393#3394#0" expanded="true" />
+            <element signature="e#3417#3418#0" expanded="true" />
+            <element signature="e#3448#3449#0" expanded="true" />
+            <element signature="e#3475#3476#0" expanded="true" />
+            <element signature="e#3508#3509#0" expanded="true" />
+            <element signature="e#3536#3537#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Title.png">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Emerloc.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Van1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Waiting.png">
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Structure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Pipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Van1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/web/Van2.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Van1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/chat.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Display.java">
+    <entry file="file://$PROJECT_DIR$/web/logic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameServerEndPointConfigurator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameServerEndPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+        <state relative-caret-position="918">
+          <caret line="99" column="41" selection-start-line="99" selection-start-column="41" selection-end-line="99" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/GameSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-568">
-          <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1371#1372#0" expanded="true" />
-            <element signature="e#1433#1434#0" expanded="true" />
-            <element signature="e#1499#1500#0" expanded="true" />
-            <element signature="e#1565#1566#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1833#1834#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1582741332366" expanded="true" signature="3782:4040" ph="..." />
+            <marker date="1582741332366" expanded="true" signature="8278:8279" ph="..." />
           </folding>
         </state>
       </provider>
@@ -868,7 +960,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.19310345" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>

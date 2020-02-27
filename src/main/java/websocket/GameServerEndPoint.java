@@ -1,6 +1,10 @@
 package websocket;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
@@ -9,10 +13,9 @@ import javax.websocket.server.ServerEndpoint;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 
-
 @ServerEndpoint(value = "/game", configurator = GameServerEndPointConfigurator.class)
 public class GameServerEndPoint {
-
+    Gson gson = new Gson();
     private static Queue<Session> playersSessions = new ArrayBlockingQueue<Session>(2);
 
     private static List<GameSession> gameSessions = Collections.synchronizedList(new LinkedList<>());
@@ -52,8 +55,13 @@ public class GameServerEndPoint {
         System.out.println("user added: " + userSession.getId());
         if (playersSessions.size() == 2) {
             GameSession gameSession = createGameSession();
-            String gameStage = gameSession.generateGson();
-            gameSession.sendMessageToPlayers(gameStage);
+            String gameOneStage = gameSession.generateGson(gameSession.isPlayerOneOnEmergency());
+            gameSession.getPlayerOneSession().getAsyncRemote().sendText(gameOneStage);
+            String gameTwoStage = gameSession.generateGson(gameSession.isPlayerTwoOnEmergency());
+            gameSession.getPlayerTwoSession().getAsyncRemote().sendText(gameTwoStage);
+
+//            String gameStage = gameSession.generateGson();
+//            gameSession.sendMessageToPlayers(gameStage);
         }
     }
 
@@ -71,49 +79,137 @@ public class GameServerEndPoint {
         System.out.println("user " + userSession.getId() + " removed!");
     }
 
+    private static int[] toArray(String json, Gson parser) {
+        return parser.fromJson(json, int[].class);
+    }
+
     @OnMessage
     public void onMessage(String message, Session userSession) {
         int i = Integer.parseInt(userSession.getId());
-        System.out.println(userSession.getId() + " : " + message);
+        System.out.println(message);
+        //  System.out.println(userSession.getId() + " : " + message);
+//        Type listType = new TypeToken<ArrayList<Integer>>() {}.getType();
+//        List<Integer> numbers = new Gson().fromJson(message, listType);
+//        System.out.println(numbers.size());
 
+//        Gson parser = new Gson();
+//
+//        int[] arr = toArray(message, parser);
+//        System.out.println();
         GameSession gameSession = getGameSession(userSession);
         currentGameSession = gameSession;
 
+        if (gameSession != null) {
+            if (gameSession.getPlayerOneScore() == 5) {
+                gameSession.getPlayerTwoSession().getAsyncRemote().sendText("-5");
+                gameSession.getPlayerOneSession().getAsyncRemote().sendText("5");
+                return;
+            }
+            if (gameSession.getPlayerTwoScore() == 5) {
+                gameSession.getPlayerTwoSession().getAsyncRemote().sendText("5");
+                gameSession.getPlayerOneSession().getAsyncRemote().sendText("-5");
+                return;
+            }
+        }
         if (gameSession == null) {
             userSession.getAsyncRemote().sendText("1");
         } else {
             if (message.equals("0")) {
-                if(i%2==0){
+                if (i % 2 == 0) {
                     gameSession.playerOneUp();
-                }else {
+                    if (gameSession.playerOneOnEmergency()) {
+                        String gameStage = gameSession.generateGson(gameSession.isPlayerOneOnEmergency());
+                        gameSession.getPlayerOneSession().getAsyncRemote().sendText(gameStage);
+                        return;
+                    }
+                } else {
                     gameSession.playerTwoUp();
+                    if (gameSession.playerTwoOnEmergency()) {
+                        String gameStage = gameSession.generateGson(gameSession.isPlayerTwoOnEmergency());
+                        gameSession.getPlayerTwoSession().getAsyncRemote().sendText(gameStage);
+                        return;
+                    }
                 }
             }
             if (message.equals("1")) {
-                if(i%2==0){
+                if (i % 2 == 0) {
                     gameSession.playerOneLeft();
-                }else {
+                    if (gameSession.playerOneOnEmergency()) {
+                        String gameStage = gameSession.generateGson(gameSession.isPlayerOneOnEmergency());
+                        gameSession.getPlayerOneSession().getAsyncRemote().sendText(gameStage);
+                        return;
+                    }
+                } else {
                     gameSession.playerTwoLeft();
+                    if (gameSession.playerTwoOnEmergency()) {
+                        String gameStage = gameSession.generateGson(gameSession.isPlayerTwoOnEmergency());
+                        gameSession.getPlayerTwoSession().getAsyncRemote().sendText(gameStage);
+                        return;
+                    }
                 }
             }
             if (message.equals("2")) {
-                if(i%2==0){
+                if (i % 2 == 0) {
                     gameSession.playerOneRight();
-                }else {
+                    if (gameSession.playerOneOnEmergency()) {
+                        String gameStage = gameSession.generateGson(gameSession.isPlayerOneOnEmergency());
+                        gameSession.getPlayerOneSession().getAsyncRemote().sendText(gameStage);
+                        return;
+                    }
+                } else {
                     gameSession.playerTwoRight();
+                    if (gameSession.playerTwoOnEmergency()) {
+                        String gameStage = gameSession.generateGson(gameSession.isPlayerTwoOnEmergency());
+                        gameSession.getPlayerTwoSession().getAsyncRemote().sendText(gameStage);
+                        return;
+                    }
                 }
             }
             if (message.equals("3")) {
-                if(i%2==0){
+                if (i % 2 == 0) {
                     gameSession.playerOneDown();
-                }else {
+                    if (gameSession.playerOneOnEmergency()) {
+                        String gameStage = gameSession.generateGson(gameSession.isPlayerOneOnEmergency());
+                        gameSession.getPlayerOneSession().getAsyncRemote().sendText(gameStage);
+                        return;
+                    }
+                } else {
                     gameSession.playerTwoDown();
+                    if (gameSession.playerTwoOnEmergency()) {
+                        String gameStage = gameSession.generateGson(gameSession.isPlayerTwoOnEmergency());
+                        gameSession.getPlayerTwoSession().getAsyncRemote().sendText(gameStage);
+                        return;
+                    }
                 }
             }
+
+            if (message.matches("(.*)\\d+\\s\\d+(.*)")) {
+                message = message.substring(1, message.length() - 1);
+                String[] coords = message.split(" ");
+                int X = Integer.valueOf(coords[0]) - 40;
+                int Y = Integer.valueOf(coords[1]) - 10;
+                System.out.println(X + " " + Y);
+                gameSession.mouseClickOnValve(X, Y);
+                if (gameSession.getPlayerTwoScore() == 5) {
+                    gameSession.getPlayerTwoSession().getAsyncRemote().sendText("5");
+                    gameSession.getPlayerOneSession().getAsyncRemote().sendText("-5");
+                    return;
+                }
+                if (gameSession.getPlayerOneScore() == 5) {
+                    gameSession.getPlayerTwoSession().getAsyncRemote().sendText("-5");
+                    gameSession.getPlayerOneSession().getAsyncRemote().sendText("5");
+                    return;
+                }
+            }
+
             //gameSession.sendMessageToPlayers(message);
-            String gameStage = gameSession.generateGson();
-            gameSession.sendMessageToPlayers(gameStage);
+
+            String gameOneStage = gameSession.generateGson(gameSession.isPlayerOneOnEmergency());
+            gameSession.getPlayerOneSession().getAsyncRemote().sendText(gameOneStage);
+            String gameTwoStage = gameSession.generateGson(gameSession.isPlayerTwoOnEmergency());
+            gameSession.getPlayerTwoSession().getAsyncRemote().sendText(gameTwoStage);
         }
     }
+
 }
 
